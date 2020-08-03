@@ -18,6 +18,9 @@
       <ul
         ref="list"
         class="context-menu__list"
+        :class="{
+          'context-menu__list--opened': inited
+        }"
         :style="lStyles"
       >
         <component
@@ -98,6 +101,7 @@ export default {
 
   data () {
     return {
+      inited: false,
       menuWidth: 0,
       menuHeight: 0,
       clientWidth: 0,
@@ -152,6 +156,8 @@ export default {
       this.menuHeight = height
       this.clientWidth = clientWidth
       this.clientHeight = clientHeight
+      // display context menu until position is calculated
+      this.inited = true
     })
   },
 
@@ -222,6 +228,10 @@ $colorMuted: #BCC1C5;
   padding: 4px 0;
   border-radius: 3px;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .2);
+  opacity: 0;
+}
+.context-menu__list--opened {
+  opacity: 1;
 }
 
 .context-menu__item {
