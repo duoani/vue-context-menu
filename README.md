@@ -93,11 +93,16 @@ export default {
 
 |  Name   | Type  | Default Value | Required | Description |
 |  ----  | ----  | --- | --- | -- |
-| width  | number | 200 | -- | menu width |
 | actions | array | [] | -- | menu list |
+| autoClose | boolean | false | -- | auto close context menu when mouse leaves. |
+| mask  | boolean | true | -- | whether a mask is displayed |
+| customClass  | string | -- | -- | custom class names for context menu |
 | zIndex  | number | 9999 | -- | menu z-index |
+| width  | number | 200 | -- | menu width |
 | top  | number | 0 | -- | menu top |
 | left  | number | 0 | -- | menu left |
+| onBefore  | function | -- | -- | triggers before the context menu opens |
+| onCancel  | function | -- | -- | triggers after the context menu is canceled |
 
 ## action items configuration
 

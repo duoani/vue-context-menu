@@ -1,6 +1,6 @@
 {
   "name": "@duoa/vue-context-menu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Context Menu (Right Click Menu) base on Vue2.x",
   "author": "Duoani <duoani@126.com>",
   "keywords": ["vue", "contextmenu", "context-menu", "right click"],
