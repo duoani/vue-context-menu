@@ -27,7 +27,7 @@ import '@duoa/vue-context-menu/dist/vue-context-menu.css'
 Vue.use(VueContextMenu)
 
 // You can also pass the options
-Vue.use(VueImgPreview, {
+Vue.use(VueContextMenu, {
   directiveName = 'ContextMenu', // Customizable directive name
   prototypeName = '$contextMenu', // Customizable Vue.prototype method name
   zIndex: 9999 // Context Menu z-index
