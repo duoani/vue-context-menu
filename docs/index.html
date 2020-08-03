@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>@duoa/vue-context-menu</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/@duoa/vue-context-menu@1.0.0/dist/vue-context-menu.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@duoa/vue-context-menu@1.0.0/dist/vue-context-menu.css">
+  <style>
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      text-align: center;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <template>
+      <div class="box" v-context-menu="contextMenuOptions">
+        Right Click This Area.
+      </div>
+    </template>
+  </div>
+  <script>
+    var Main = {
+      computed: {
+        contextMenuOptions () {
+          return {
+            width: 200, // 200px as default
+            actions: [
+              {
+                label: 'Copy',
+                subLabel: 'Ctrl + C',
+                disabled: false,
+                onClick: () => {
+                  console.log('copy')
+                }
+              },
+              {
+                label: 'Paste',
+                subLabel: 'Ctrl + V',
+                disabled: true,
+                onClick: () => {
+                  console.log('paste')
+                }
+              },
+              {
+                type: 'sep'
+              },
+              {
+                label: 'Delete',
+                subLabel: 'Del',
+                disabled: false,
+                onClick: () => {
+                  console.log('delete')
+                }
+              },
+            ]
+          }
+        }
+      }
+    }
+    var Ctor = Vue.extend(Main)
+    new Ctor().$mount('#app')
+  </script>
+</body>
+
+</html>
